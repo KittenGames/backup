@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2; /* Light gray background color */
+  overflow-y: scroll; /* Add vertical scroll bar */
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #3498db; /* Blue color */
+  color: white; /* White text */
+  padding: 5px; /* Adjusted padding */
+  height: auto; /* Adjusted height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100; /* Ensure the header stays on top of other elements */
+}
+
+iframe {
+  position: absolute;
+  top: 58px; /* Adjusted to be 20 pixels below the header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 58px); /* Adjusted for the new top position */
+  border: none;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px; /* Add some padding */
+}
+
+.game-card {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.game-card img {
+  width: 120px;
+  height: auto; /* Adjusted to maintain aspect ratio */
+  margin-right: 20px; /* Move image to the left */
+  border-radius: 10px;
+}
+
+.game-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-info h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.game-info button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Increase padding for bigger button */
+  border-radius: 10px; /* Increase border radius for rounded corners */
+  cursor: pointer;
+  font-size: 16px; /* Increase font size */
+}
+
+.game-info button:hover {
+  background-color: darkorange;
+}
+
+.header-right button {
+  background-color: #FFA500; /* Orange color */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header-right button:hover {
+  background-color: #FF4500; /* Darker orange color */
+}

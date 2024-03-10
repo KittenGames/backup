@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Game</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>KittenGames</h1>
+    </div>
+    <div class="header-right">
+      <button id="home-btn" onclick="goToHome()">Home</button>
+    </div>
+  </header>
+  <iframe id="game-iframe" src="" frameborder="0"></iframe>
+
+  <script>
+    // Function to redirect to home page
+    function goToHome() {
+      window.location.href = 'index.html';
+    }
+    // Function to parse URL parameters
+    function getUrlParameter(name) {
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(window.location.href);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Get game URL parameter from the URL and decode it
+    var gameUrl = getUrlParameter('game');
+    var decodedUrl = atob(gameUrl);
+
+    // Set iframe source to decoded game URL
+    document.getElementById('game-iframe').src = decodedUrl;
+  </script>
+</body>
+</html>
