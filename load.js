@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
       playButton.textContent = 'Play';
       playButton.addEventListener('click', function() {
         const encodedUrl = btoa(game.url);
-        window.location.href = `play.html?game=${encodedUrl}`;
+        window.location.href = `play?game=${encodedUrl}`;
       });
       gameInfo.appendChild(playButton);
 
