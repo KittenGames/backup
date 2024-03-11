@@ -13,6 +13,7 @@
       <h1>KittenGames</h1>
     </div>
     <div class="header-right">
+      <button onclick="openInBlank()">Open in About:Blank</button>
       <button id="home-btn" onclick="goToHome()">Home</button>
     </div>
   </header>
@@ -21,8 +22,24 @@
   <script>
     // Function to redirect to home page
     function goToHome() {
-      window.location.href = './';
+      window.location.href = 'index.html';
     }
+
+    // Function to open the website in a new about:blank page
+    function openInBlank() {
+      var url = document.getElementById('game-iframe').src;
+      var win = window.open('about:blank');
+      win.document.body.style.margin = '0';
+      win.document.body.style.height = '100vh';
+      var iframe = win.document.createElement('iframe');
+      iframe.style.border = 'none';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.margin = '0';
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+    }
+
     // Function to parse URL parameters
     function getUrlParameter(name) {
       name = name.replace(/[\[\]]/g, "\\$&");
