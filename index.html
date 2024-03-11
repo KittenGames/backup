@@ -7,6 +7,56 @@
   <!-- Link to your SVG icon -->
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      overflow: auto;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* List styles */
+    #links-container {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    #links-container a {
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,14 +64,56 @@
       <h1>KittenGames</h1>
     </div>
     <div class="header-right">
-      <button id="home-btn">Home</button>
       <button id="add-game-btn">Load Games</button>
       <button id="reset-storage-btn">Reset LocalStorage</button>
+      <button id="links-btn">Links</button>
     </div>
   </header>
+
+  <!-- Modal -->
+  <div id="links-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Links</h2>
+      <ul id="links-container">
+        <li><a href="https://kittengames.github.io/">kittengames.github.io</a></li>
+        <li><a href="https://games.kittendev.xyz/">games.kittendev.xyz</a></li>
+        <li><a href="https://kittengames-pmfj2.kinsta.page/">kittengames-pmfj2.kinsta.page</a></li>
+      </ul>
+    </div>
+  </div>
+
   <div id="games-container" class="container">
     <!-- Games will be added here dynamically -->
   </div>
+
   <script src="load.js"></script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('links-modal');
+
+    // Get the button that opens the modal
+    var linksBtn = document.getElementById("links-btn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    linksBtn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
