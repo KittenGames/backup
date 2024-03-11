@@ -3,10 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const addGameButton = document.getElementById('add-game-btn');
   const resetStorageButton = document.getElementById('reset-storage-btn');
 
-  homeButton.addEventListener('click', function() {
-    window.location.href = 'index.html';
-  });
-
   addGameButton.addEventListener('click', function() {
     const jsonUrl = prompt('Enter the URL of the JSON file containing the games:');
     if (jsonUrl) {
@@ -61,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       playButton.textContent = 'Play';
       playButton.addEventListener('click', function() {
         const encodedUrl = btoa(game.url);
-        window.location.href = `play?game=${encodedUrl}`;
+        window.location.href = `play.html?game=${encodedUrl}`;
       });
       gameInfo.appendChild(playButton);
 
