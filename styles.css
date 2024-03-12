@@ -1,3 +1,4 @@
+/* Main page styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,8 +12,8 @@ header {
   top: 0;
   background-color: #3498db; /* Blue color */
   color: white; /* White text */
-  padding: 5px; /* Adjusted padding */
-  height: auto; /* Adjusted height */
+  padding: 10px; /* Adjusted padding */
+  height: 40px; /* Adjusted height */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,16 +22,11 @@ header {
 
 iframe {
   position: absolute;
-  top: 58px; /* Adjusted to be 20 pixels below the header */
+  top: 57px; /* Adjusted position to sit 5 pixels below the header */
   left: 0;
   width: 100%;
-  height: calc(100vh - 58px); /* Adjusted for the new top position */
+  height: calc(100vh - 55px); /* Adjusted height to fill remaining space below the header */
   border: none;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
 }
 
 .container {
@@ -38,23 +34,23 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px; /* Add some padding */
+  padding: 5px 20px; /* Reduced top and bottom padding */
 }
 
 .game-card {
-  width: 300px;
+  width: 320px; /* Increased width */
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 15px; /* Increased border radius */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
 }
 
 .game-card img {
   width: 120px;
-  height: auto; /* Adjusted to maintain aspect ratio */
-  margin-right: 20px; /* Move image to the left */
+  height: auto;
+  margin-right: 20px;
   border-radius: 10px;
 }
 
@@ -75,10 +71,10 @@ iframe {
   background-color: orange;
   color: white;
   border: none;
-  padding: 15px 30px; /* Increase padding for bigger button */
-  border-radius: 10px; /* Increase border radius for rounded corners */
+  padding: 15px 30px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 16px; /* Increase font size */
+  font-size: 16px;
 }
 
 .game-info button:hover {
@@ -86,8 +82,8 @@ iframe {
 }
 
 .header-right button {
-  background-color: #FFA500; /* Orange color */
-  color: white; /* White text */
+  background-color: #FFA500;
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -96,5 +92,70 @@ iframe {
 }
 
 .header-right button:hover {
-  background-color: #FF4500; /* Darker orange color */
+  background-color: #FF4500;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* List styles */
+#links-container {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#links-container a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px; /* Top corners not rounded */
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light gray background */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+#search-input:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #3498db; /* Change border color on focus */
 }
