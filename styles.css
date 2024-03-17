@@ -1,31 +1,30 @@
-/* Main page styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Bakbak One', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2; /* Light gray background color */
-  overflow-y: scroll; /* Add vertical scroll bar */
+  background-color: #f2f2f2;
+  overflow-y: scroll;
 }
 
 header {
   position: sticky;
   top: 0;
-  background-color: #3498db; /* Blue color */
-  color: white; /* White text */
-  padding: 10px; /* Adjusted padding */
-  height: 40px; /* Adjusted height */
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100; /* Ensure the header stays on top of other elements */
+  z-index: 100;
 }
 
 iframe {
   position: absolute;
-  top: 57px; /* Adjusted position to sit 5 pixels below the header */
+  top: 57px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 55px); /* Adjusted height to fill remaining space below the header */
+  height: calc(100vh - 55px);
   border: none;
 }
 
@@ -34,17 +33,22 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 5px 20px; /* Reduced top and bottom padding */
+  padding: 5px 20px;
 }
 
 .game-card {
-  width: 320px; /* Increased width */
+  width: 320px;
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 15px; /* Increased border radius */
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
 }
 
 .game-card img {
@@ -75,6 +79,7 @@ iframe {
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .game-info button:hover {
@@ -89,13 +94,13 @@ iframe {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .header-right button:hover {
   background-color: #FF4500;
 }
 
-/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -116,6 +121,11 @@ iframe {
   width: 80%;
   max-width: 600px;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.modal:hover .modal-content {
+  transform: scale(1.1);
 }
 
 .close {
@@ -132,7 +142,6 @@ iframe {
   cursor: pointer;
 }
 
-/* List styles */
 #links-container {
   list-style-type: disc;
   padding-left: 20px;
@@ -149,13 +158,13 @@ iframe {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 0 0 5px 5px; /* Top corners not rounded */
+  border-radius: 0 0 5px 5px;
   box-sizing: border-box;
-  background-color: #f9f9f9; /* Light gray background */
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
 }
 
 #search-input:focus {
-  outline: none; /* Remove default focus outline */
-  border-color: #3498db; /* Change border color on focus */
+  outline: none;
+  border-color: #3498db;
 }
