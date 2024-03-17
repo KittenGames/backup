@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KittenGames</title>
-  <!-- Link to your SVG icon -->
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif; /* Use default font for body */
+    }
+
+    header h1 {
+      font-family: 'Bakbak One', sans-serif; /* Use custom font for header title */
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,6 +26,7 @@
       <button id="add-game-btn">Load Games</button>
       <button id="reset-storage-btn">Reset LocalStorage</button>
       <button id="links-btn">Links</button>
+      <button id="youtube-btn" onclick="goToWatchPage()">Youtube</button>
     </div>
   </header>
 
@@ -83,6 +93,11 @@
         }
       }
     });
+
+    // Function to redirect to watch page
+    function goToWatchPage() {
+      window.location.href = 'https://meowtube.kittendev.xyz/';
+    }
   </script>
 </body>
 </html>
