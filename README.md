@@ -21,6 +21,10 @@ While the core library is curated by our team, we also welcome contributions fro
 
 For inquiries, suggestions, or feedback, please dm me at [my discord](https://discord.com/users/1030436156858445875).
 
----
+## Quick Deployment
+[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://replit.com/github/CodingKitten-YT/kittengames)
+[![Deploy to Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/CodingKitten-YT/kittengames)
+[![Deploy to Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CodingKitten-YT/kittengames)
+[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/CodingKitten-YT/kittengames)
 
 **Ready to play? Visit [KittenGames](https://kittengames.github.io) and start your gaming journey today!**
