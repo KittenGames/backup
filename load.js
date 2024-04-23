@@ -23,10 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
           gameInfo.appendChild(name);
 
           const playButton = document.createElement('button');
-          playButton.textContent = 'Play';
+          if (game.newtab) {
+            playButton.textContent = 'Open';
+          } else {
+            playButton.textContent = 'Play';
+          }
           playButton.addEventListener('click', function() {
-            const encodedUrl = btoa(game.url);
-            window.location.href = `play.html?game=${encodedUrl}`;
+            if (game.newtab) {
+              window.open(game.url, '_blank');
+            } else {
+              const encodedUrl = btoa(game.url);
+              window.location.href = `play.html?game=${encodedUrl}`;
+            }
           });
           gameInfo.appendChild(playButton);
 
