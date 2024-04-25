@@ -20,6 +20,7 @@
     </div>
     <div class="header-right">
       <button onclick="openInBlank()">Open in About:Blank</button>
+      <button onclick="toggleFullScreen()">Fullscreen</button>
       <button id="home-btn" onclick="goToHome()">Home</button>
     </div>
   </header>
@@ -42,6 +43,27 @@
       iframe.style.margin = '0';
       iframe.src = url;
       win.document.body.appendChild(iframe);
+    }
+
+    function toggleFullScreen() {
+      var iframe = document.getElementById('game-iframe');
+      if (!document.fullscreenElement) {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) { /* Safari */
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { /* IE11 */
+          iframe.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+          document.msExitFullscreen();
+        }
+      }
     }
 
     function getUrlParameter(name) {
