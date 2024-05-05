@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KittenGames</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="themes/dark.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="header-left">
       <h1>KittenGames</h1>
     </div>
     <div class="header-right">
-      <button id="links-btn">Links</button>
-      <button id="youtube-btn" onclick="goToWatchPage()">Movies</button>
+      <button id="settings-btn">Settings</button>
     </div>
   </header>
 
-  <div id="links-modal" class="modal">
+  <div id="settings-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Links</h2>
-      <ul id="links-container">
-        <li><a href="https://games.kittendev.xyz/">Main link</a></li>
-        <li><a href="https://linktr.ee/kittengames">View All Links</a></li>
-        <li><p>☝ View all links.☝</p></li>
-      </ul>
+      <h2>Settings</h2>
+      <div>
+        <label for="theme-select">Select Theme:</label>
+        <select id="theme-select">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="ocean">Ocean</option>
+          <option value="sakura">Sakura</option>
+          <option value="forest">Forest</option>
+          <option value="coffee">Coffee</option>
+          <option value="space">Space</option>
+        </select>
+      </div>
     </div>
   </div>
 
@@ -46,28 +57,9 @@
   </div>
 
   <script src="load.js"></script>
+  <script src="settings.js"></script>
   <script>
-    var modal = document.getElementById('links-modal');
-
-    var linksBtn = document.getElementById("links-btn");
-
-    var span = document.getElementsByClassName("close")[0];
-
-    linksBtn.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-
-    document.getElementById("search-input").addEventListener("input", function() {
+    document.getElementById("search-input").addEventListener("input", function () {
       var searchValue = this.value.toLowerCase();
       var games = document.getElementsByClassName("game-card");
       for (var i = 0; i < games.length; i++) {
@@ -79,10 +71,7 @@
         }
       }
     });
-
-    function goToWatchPage() {
-      window.location.href = 'https://movies.kittendev.xyz/';
-    }
   </script>
 </body>
+
 </html>

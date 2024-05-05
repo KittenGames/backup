@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--header-background-color);
+  color: var(--text-color);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+iframe {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  border: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--card-content-background);
+  color: var(--text-color);
+  border: 1px solid var(--outline-color);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+select option {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--card-background);
+}
+
+.modal-content {
+  background-color: var(--card-content-background);
+  color: var(--card-text-color);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 50%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px var(--card-box-shadow);
+}
+
+.close {
+  color: var(--card-text-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.game-card {
+  width: 100%;
+  max-width: 240px;
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid var(--outline-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-content-background);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.game-info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.game-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.game-info button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.game-info button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.header-right button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.header-right button:hover {
+  background-color: var(--button-hover-color);
+}
+
+#links-container {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#links-container a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: var(--card-content-background);
+  transition: border-color 0.3s ease;
+  color: var(--text-color);
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .game-card {
+    width: calc(50% - 40px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .game-card {
+    width: calc(33.33% - 40px);
+  }
+}
+
+button:focus,
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+button,
+a {
+  color: var(--text-color);
+}
+
+button:hover,
+button:focus,
+a:hover,
+a:focus {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .game-card {
+    width: calc(50% - 40px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+:root {
+    --background-color: #354f38;
+    --primary-color: #5c7b60;
+    --button-hover-color: #3a553e;
+    --text-color: #f2f2f2;
+    --outline-color: #2a3b2c;
+    --card-background: rgba(0, 0, 0, 0.4);
+    --card-content-background: #3f5a43;
+    --card-text-color: var(--text-color);
+    --card-box-shadow: rgba(0, 0, 0, 0.4);
+    --header-background-color: #27391f;
+  }
+  

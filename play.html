@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Play Game</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" id="theme-link" href="themes/dark.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -27,12 +28,30 @@
     </div>
   </header>
   <iframe id="game-iframe" src="" frameborder="0"></iframe>
-
   <script>
+    // Function to load the saved theme on page load
+    function loadSavedTheme() {
+      const savedTheme = localStorage.getItem('selectedTheme');
+      const themeLink = document.getElementById('theme-link');
+      if (savedTheme) {
+        themeLink.href = `themes/${savedTheme}.css`;
+      } else {
+        // Default to 'dark' theme if no theme is saved
+        themeLink.href = `themes/dark.css`;
+      }
+    }
+
+    // Load the saved theme when the page loads
+    loadSavedTheme();
+
+    // Rest of your existing JavaScript code...
+
+    // Function to go to the home page
     function goToHome() {
       window.location.href = window.location.origin;
     }
 
+    // Function to open the game in a new window
     function openInBlank() {
       var url = document.getElementById('game-iframe').src;
       var win = window.open('about:blank');
@@ -47,6 +66,7 @@
       win.document.body.appendChild(iframe);
     }
 
+    // Function to toggle fullscreen mode
     function toggleFullScreen() {
       var iframe = document.getElementById('game-iframe');
       if (!document.fullscreenElement) {

@@ -23,12 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
           gameInfo.appendChild(name);
 
           const playButton = document.createElement('button');
-          playButton.textContent = 'Play';
-          playButton.addEventListener('click', function() {
-            const encodedName = btoa(game.name);
-            const encodedUrl = btoa(game.url);
-            window.location.href = `play.html?game=${encodedName}`;
-          });
+          if (game.newtab) {
+            playButton.textContent = 'Open';
+            playButton.addEventListener('click', function() {
+              window.open(game.url, '_blank');
+            });
+          } else {
+            playButton.textContent = 'Play';
+            playButton.addEventListener('click', function() {
+              const encodedName = btoa(game.name);
+              const encodedUrl = btoa(game.url);
+              window.location.href = `play.html?game=${encodedName}`;
+            });
+          }
           gameInfo.appendChild(playButton);
 
           gameCard.appendChild(gameInfo);
