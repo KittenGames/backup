@@ -16,7 +16,7 @@ header {
   top: 0;
   background-color: var(--header-background-color);
   color: var(--text-color);
-  padding: 15px 20px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
