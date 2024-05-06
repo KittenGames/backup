@@ -61,6 +61,16 @@ select option {
   color: var(--text-color);
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -71,6 +81,40 @@ select option {
   height: 100%;
   overflow: auto;
   background-color: var(--card-background);
+}
+
+.modal-content input[type="text"],
+.modal-content button {
+  background-color: var(--card-content-background);
+  color: var(--text-color);
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content button:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.modal-content button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: var(--button-hover-color);
 }
 
 .modal-content {

@@ -29,11 +29,11 @@
       <button id="settings-btn">Settings</button>
     </div>
   </header>
-
+  
   <div id="settings-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Settings</h2>
+      <h2>Themes</h2>
       <div>
         <label for="theme-select">Select Theme:</label>
         <select id="theme-select">
@@ -46,9 +46,22 @@
           <option value="space">Space</option>
         </select>
       </div>
+      <br>
+      <h2>Tab Cloak</h2>
+      <div>
+        <label for="icon-input">Icon URL:</label>
+        <input type="text" id="icon-input">
+      </div>
+      <div>
+        <label for="title-input">Title:</label>
+        <input type="text" id="title-input">
+      </div>
+      <button id="save-settings-btn">Apply Cloak</button>
+      <button id="remove-cloak-btn">Remove Cloak</button>
     </div>
   </div>
 
+  
   <div id="search-container">
     <input type="text" id="search-input" placeholder="Search games...">
   </div>

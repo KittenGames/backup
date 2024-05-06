@@ -43,9 +43,6 @@
 
     // Load the saved theme when the page loads
     loadSavedTheme();
-
-    // Rest of your existing JavaScript code...
-
     // Function to go to the home page
     function goToHome() {
       window.location.href = window.location.origin;
@@ -122,6 +119,26 @@
     getGameUrl(decodedName).then(gameUrl => {
       document.getElementById('game-iframe').src = gameUrl;
     });
+
+    function loadCloakSettings() {
+      const iconUrl = localStorage.getItem('iconUrl');
+      const pageTitle = localStorage.getItem('pageTitle');
+      if (iconUrl) {
+        const iconLink = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        iconLink.type = 'image/x-icon';
+        iconLink.rel = 'shortcut icon';
+        iconLink.href = iconUrl;
+        document.getElementsByTagName('head')[0].appendChild(iconLink);
+      }
+      if (pageTitle) {
+        document.title = pageTitle;
+      }
+    }
+
+    window.onload = function() {
+      loadSavedTheme();
+      loadCloakSettings();
+    };
 
     document.getElementById('home-btn').addEventListener('click', goToHome);
   </script>
